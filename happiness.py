@@ -80,11 +80,3 @@ elif viz_type == "Scatter Plot":
     sns.scatterplot(x='GDP per Capita', y='Score', hue=country_col, size='Life Expectancy', data=df_filtered, ax=ax, palette='coolwarm')
     ax.set_title(f'Happiness Score vs. GDP per Capita in {year}')
     st.pyplot(fig)
-
-# Show statistical correlation matrix
-if st.checkbox("Show Correlation Matrix"):
-    st.subheader("Correlation Matrix")
-    correlation_matrix = df_filtered.corr()
-    fig, ax = plt.subplots(figsize=(8, 6))
-    sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', ax=ax)
-    st.pyplot(fig)
